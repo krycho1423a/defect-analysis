@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DAVINCI — root-cause analytics</title>
+    <meta
+      name="description"
+      content="Root-cause views: dimensional VCT diagnostics, downtime–defect correlation, and repeating contamination cycles. No confidential company data."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="wrap top">
+        <div class="brand">DAVINCI <span>quality analytics workstation</span></div>
+        <nav>
+          <a href="index.html">1. Operations &amp; space</a>
+          <a href="analytics.html" aria-current="page">2. Root cause</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="notice">
+      <div class="wrap">
+        <strong>No confidential company data on this page.</strong>
+        Cell IDs, lot numbers, production-line names, operator names and other
+        identifiers are redacted. Formula panels show method, not a named
+        factory dataset.
+      </div>
+    </div>
+
+    <main class="wrap">
+      <h1>From a spike to a cause</h1>
+      <p class="lead">
+        Page 2 is the analyst workflow after monitoring: isolate a dimensional
+        shift, join quality events with process stops, and detect repeating
+        contamination cycles instead of treating each NG as independent.
+      </p>
+
+      <article class="feature">
+        <img
+          src="assets/git2.jpg"
+          alt="VCT analysis with alignment formula, cause bars and time-series of AC and stacker shift. Identifiers redacted."
+          width="1907"
+          height="1016"
+        />
+        <p class="caption">
+          VCT — stack, equipment and searching IDs redacted. Charts keep the
+          diagnostic logic visible.
+        </p>
+        <div class="copy">
+          <h2>Dimensional diagnostics (VCT)</h2>
+          <p>
+            Not every NG is a visual defect. This view decomposes alignment
+            into measured terms (AC, previous/current CPOS, stacker shift) and
+            a result (CA) against a spec limit. The formula is shown on screen
+            so a judgement is auditable.
+          </p>
+          <p>
+            Pareto-style bars split cause codes; line charts show whether a
+            shift is a step change or noise. That is standard process-control
+            thinking: separate special cause from common cause before changing
+            the machine.
+          </p>
+        </div>
+      </article>
+
+      <article class="feature">
+        <img
+          src="assets/git1.jpg"
+          alt="Lami correlation timeline with stop flags, defect dots, hourly bars and a coded downtime table. Remarks and cell IDs redacted."
+          width="1912"
+          height="1018"
+        />
+        <p class="caption">
+          Lami correlation — remarks, cell IDs and line names redacted.
+        </p>
+        <div class="copy">
+          <h2>Stop events versus quality</h2>
+          <p>
+            Downtime and defects share a clock. Flags (sensor / NG conditions)
+            sit on a Gantt-like lane; defect dots and hourly bars sit below.
+            The question is whether quality collapses during a stop, after a
+            restart, or independently.
+          </p>
+          <p>
+            Duration buckets (0–5 s … 60+ s) turn a long event log into a
+            distribution. That is more useful for a standup than a raw list of
+            timestamps: you can say what share of loss is long stops versus
+            chatter.
+          </p>
+        </div>
+      </article>
+
+      <article class="feature">
+        <img
+          src="assets/git5.jpg"
+          alt="Roll contamination analysis with cycle table, stacked bar chart of event types, and spatial maps of repeating bands. Line names redacted."
+          width="1905"
+          height="1015"
+        />
+        <p class="caption">
+          Roll contamination — production-line names redacted. Cycle types and
+          spatial bands remain as method.
+        </p>
+        <div class="copy">
+          <h2>Repeating contamination cycles</h2>
+          <p>
+            If a defect band returns every N minutes, it is probably a roller
+            or merge event, not a random particle. This module groups time
+            windows, tags cycle type (align / merge / lami), and shows the
+            matching spatial signature.
+          </p>
+          <p>
+            The daily stacked bars are a simple seasonality check: which days
+            the cycle is active. For an analyst this is pattern detection on
+            event data, then confirmation on the image — hypothesis, then
+            evidence.
+          </p>
+        </div>
+      </article>
+
+      <div class="pager">
+        <a href="index.html">
+          Back: operations &amp; space
+          <small>Monitoring · density map</small>
+        </a>
+        <span></span>
+      </div>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        Portfolio case study. Not affiliated with any employer. This site
+        contains no confidential company data; screenshots are redacted.
+        Built for a data-analyst application.
+      </div>
+    </footer>
+  </body>
+</html>
