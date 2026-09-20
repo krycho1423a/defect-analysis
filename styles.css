@@ -1,18 +1,27 @@
 :root {
-  --bg: #f4f1ea;
-  --paper: #fffdf8;
-  --ink: #1c1915;
-  --muted: #5c564c;
-  --line: #d8d0c4;
-  --accent: #1f4d6e;
-  --accent-soft: #e7eef3;
-  --warn: #6b3a12;
-  --warn-bg: #f6eadb;
-  --max: 1080px;
+  --window: #0b1220;
+  --alt: #10182c;
+  --base: #0a1020;
+  --text: #e8eef8;
+  --muted: #94a3b8;
+  --border: #1e3a5a;
+  --border-strong: #334e6e;
+  --button: #152038;
+  --button-hover: #1d2d4a;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --link: #93c5fd;
+  --highlight: #1e3a5f;
+  --radius: 10px;
+  --max: 1120px;
 }
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
@@ -22,14 +31,14 @@ body {
 }
 
 body {
-  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
-  color: var(--ink);
-  background: var(--bg);
+  font-family: "Segoe UI", Calibri, sans-serif;
+  color: var(--text);
+  background: var(--window);
   line-height: 1.55;
 }
 
 a {
-  color: var(--accent);
+  color: var(--link);
 }
 
 .wrap {
@@ -37,78 +46,94 @@ a {
   margin: 0 auto;
 }
 
-header {
-  border-bottom: 1px solid var(--line);
-  background: var(--paper);
+.chrome {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--alt);
+  border-bottom: 1px solid var(--border);
 }
 
 .top {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  gap: 24px;
-  padding: 18px 0;
+  align-items: center;
+  gap: 20px;
+  min-height: 52px;
 }
 
 .brand {
-  font-family: "IBM Plex Serif", Georgia, serif;
-  font-size: 20px;
-  letter-spacing: 0.02em;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .brand span {
-  color: var(--muted);
-  font-size: 13px;
   margin-left: 10px;
-  font-family: "IBM Plex Sans", sans-serif;
-}
-
-nav {
-  display: flex;
-  gap: 18px;
-  font-size: 14px;
-}
-
-nav a {
-  text-decoration: none;
   color: var(--muted);
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 13px;
 }
 
-nav a[aria-current="page"] {
-  color: var(--ink);
-  border-bottom: 2px solid var(--ink);
-  padding-bottom: 2px;
+.tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--base);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 3px;
+}
+
+.tabs a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+.tabs a:hover,
+.tabs a:focus {
+  color: var(--text);
+  background: var(--button-hover);
 }
 
 .notice {
-  background: var(--warn-bg);
-  color: var(--warn);
-  border-top: 1px solid #ead7bc;
-  border-bottom: 1px solid #ead7bc;
+  background: var(--highlight);
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
   font-size: 13px;
   padding: 10px 0;
 }
 
 .notice strong {
-  color: var(--ink);
+  color: var(--text);
 }
 
 main {
-  padding: 36px 0 72px;
+  padding: 40px 0 80px;
 }
 
-h1 {
-  font-family: "IBM Plex Serif", Georgia, serif;
-  font-size: 38px;
-  font-weight: 500;
+.hero h1 {
+  font-size: 34px;
+  font-weight: 600;
   line-height: 1.2;
-  margin: 0 0 14px;
+  margin: 0 0 8px;
+}
+
+.byline {
+  margin: 0 0 16px;
+  font-size: 15px;
+  color: var(--accent-hover);
 }
 
 .lead {
-  font-size: 18px;
+  font-size: 17px;
   color: var(--muted);
-  max-width: 720px;
+  max-width: 740px;
   margin: 0 0 28px;
 }
 
@@ -116,40 +141,37 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 0 0 40px;
+  margin: 0 0 36px;
+  padding: 0;
+  list-style: none;
 }
 
 .tags li {
-  list-style: none;
   font-size: 12px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  background: var(--accent-soft);
-  color: var(--accent);
-  padding: 6px 10px;
-}
-
-.tags ul {
-  display: contents;
-  margin: 0;
-  padding: 0;
+  color: var(--accent-hover);
+  background: var(--button);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 12px;
 }
 
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 12px;
   margin-bottom: 48px;
 }
 
 .card {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  padding: 18px 18px 16px;
+  background: var(--alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
 }
 
 .card h2 {
-  font-size: 15px;
+  font-size: 14px;
+  font-weight: 600;
   margin: 0 0 8px;
 }
 
@@ -160,87 +182,64 @@ h1 {
 }
 
 .feature {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  margin-bottom: 28px;
+  margin-bottom: 36px;
+  background: var(--alt);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .feature img {
   display: block;
   width: 100%;
   height: auto;
-  background: #0b1220;
-}
-
-.caption {
-  font-size: 12px;
-  color: var(--muted);
-  padding: 8px 18px 0;
+  background: var(--base);
 }
 
 .copy {
-  padding: 8px 18px 20px;
+  padding: 16px 18px 20px;
 }
 
 .copy h2 {
-  font-family: "IBM Plex Serif", Georgia, serif;
-  font-size: 24px;
-  font-weight: 500;
-  margin: 12px 0 8px;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 8px;
 }
 
 .copy p {
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   color: var(--muted);
 }
 
-.pager {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  margin-top: 12px;
-}
-
-.pager a {
-  text-decoration: none;
-  border: 1px solid var(--line);
-  background: var(--paper);
-  padding: 12px 16px;
-  color: var(--ink);
-}
-
-.pager small {
-  display: block;
-  color: var(--muted);
-  font-size: 12px;
+.copy p:last-child {
+  margin-bottom: 0;
 }
 
 footer {
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--border);
   padding: 22px 0 40px;
   font-size: 13px;
   color: var(--muted);
+  background: var(--alt);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 860px) {
   .top,
-  .grid-3,
-  .pager {
+  .grid-3 {
     display: block;
   }
 
-  h1 {
-    font-size: 30px;
+  .tabs {
+    flex-wrap: wrap;
+    border-radius: 12px;
+    margin: 8px 0 10px;
   }
 
-  .brand span,
-  nav {
-    display: block;
-    margin-top: 8px;
+  .hero h1 {
+    font-size: 26px;
   }
 
-  .pager a {
-    display: block;
+  .card {
     margin-bottom: 10px;
   }
 }

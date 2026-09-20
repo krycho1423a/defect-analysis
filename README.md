@@ -1,8 +1,8 @@
-# DAVINCI analytics case study
+# Defect Analysis — visual analytics
 
-Public **GitHub Pages** site for a data-analyst CV.
+Portfolio page by **Krystian Gańczarski**.
 
-**This repository contains no confidential company data.** Screenshots are
-redacted (cell IDs, lot numbers, production-line names, operator names).
+**This repository contains no confidential data.** Screenshots are redacted.
 
-Live page: published via GitHub Pages from this repository.
+Live site: https://krycho1423a.github.io/defect-analysis/
+

@@ -3,149 +3,168 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>DAVINCI — operations &amp; spatial quality analytics</title>
+    <title>Defect Analysis — visual analytics</title>
     <meta
       name="description"
-      content="Portfolio case study of a manufacturing quality analytics workstation. Screenshots are redacted. This page contains no confidential company data."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500&display=swap"
-      rel="stylesheet"
+      content="Defect analysis workstation: live KPIs, spatial maps, time series and drill-down. Screenshots are redacted. No confidential data."
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
+    <header class="chrome">
       <div class="wrap top">
-        <div class="brand">DAVINCI <span>quality analytics workstation</span></div>
-        <nav>
-          <a href="index.html" aria-current="page">1. Operations &amp; space</a>
-          <a href="analytics.html">2. Root cause</a>
+        <div class="brand">Defect Analysis <span>visual analytics</span></div>
+        <nav class="tabs" aria-label="On this page">
+          <a href="#overview">Overview</a>
+          <a href="#monitoring">Monitoring</a>
+          <a href="#density">Maps</a>
+          <a href="#diagnostics">Diagnostics</a>
+          <a href="#correlation">Correlation</a>
+          <a href="#cycles">Cycles</a>
         </nav>
       </div>
     </header>
 
     <div class="notice">
       <div class="wrap">
-        <strong>No confidential company data on this page.</strong>
-        Cell IDs, lot numbers, production-line names, operator names and other
-        identifiers are redacted in every screenshot. Visible charts illustrate
-        the interface only and are not attributable to a specific plant.
+        <strong>This page contains no confidential data.</strong>
+        Identifiers in screenshots are redacted.
       </div>
     </div>
 
     <main class="wrap">
-      <h1>Turning shop-floor quality data into decisions</h1>
-      <p class="lead">
-        DAVINCI is a desktop analytics workstation I designed for manufacturing
-        quality: live NG monitoring, spatial defect maps, downtime correlation
-        and dimensional root-cause views. This two-page case study is for a
-        data-analyst CV. It shows how I structure KPIs, find clusters, and
-        drill from plant-level rates to a single event.
-      </p>
-      <div class="tags">
-        <ul>
-          <li>KPI monitoring</li>
-          <li>Spatial clustering</li>
-          <li>Time-series</li>
+      <section class="hero" id="overview">
+        <h1>Defect analysis: from a rate to a pattern</h1>
+        <p class="byline">Designed and built by Krystian Gańczarski</p>
+        <p class="lead">
+          A desktop workstation I built for visual defect analysis: live
+          dashboards, maps on the inspected surface, timelines and drill-down
+          from a summary to a single case. The screens below are a portfolio
+          sample with company-specific labels and figures removed.
+        </p>
+        <ul class="tags">
+          <li>KPI dashboards</li>
+          <li>Spatial analysis</li>
+          <li>Time series</li>
           <li>Event correlation</li>
           <li>Root-cause drill-down</li>
         </ul>
-      </div>
+      </section>
 
       <section class="grid-3">
         <article class="card">
           <h2>Measure</h2>
           <p>
-            NG rate versus inspected volume, by line and hour, with alert
-            thresholds instead of a static report.
+            Rates next to volume, so a busy period is not mistaken for a worse
+            one. Alerts sit on the same screen as the trend.
           </p>
         </article>
         <article class="card">
           <h2>Locate</h2>
           <p>
-            Defects plotted on camera views and heatmaps, so a spike is a
-            pattern on the product — not only a number in a table.
+            Points and heatmaps on the actual view of the object, so a spike
+            becomes a cluster, a band, or noise.
           </p>
         </article>
         <article class="card">
           <h2>Explain</h2>
           <p>
-            Stops, sensor flags and dimensional shifts linked in time, so
-            “what happened” can be separated from “where it clustered”.
+            Events, flags and measurements on one clock. You can ask whether
+            two things moved together, or only looked related.
           </p>
         </article>
       </section>
 
-      <article class="feature">
+      <article class="feature" id="monitoring">
         <img
-          src="assets/git3.jpg"
-          alt="Live monitoring dashboard with spatial defect maps, NG-rate table and hourly volume chart. Line names and cell IDs redacted."
+          src="assets/red3.png"
+          alt="Monitoring dashboard with spatial overlays and a time chart. Identifiers redacted."
           width="1907"
           height="1018"
         />
-        <p class="caption">
-          Monitoring — identifiers redacted (line names, lot numbers, cell IDs).
-        </p>
         <div class="copy">
-          <h2>Live operations monitoring</h2>
+          <h2>Live monitoring</h2>
           <p>
-            A shift view built around rate, not raw count: NG% next to inspected
-            volume, so a busy line is not confused with a bad line. Spatial
-            overlays show whether defects are scattered, banded, or pinned to
-            one camera / zone.
-          </p>
-          <p>
-            The hourly chart answers a basic analyst question — <em>when</em>
-            did the process change — before opening a lot of images. Preview
-            panes keep the path from KPI → example intact.
+            A working view for “what is happening now”: a ranked list, a chart
+            over the day, and example images on the same screen. The path from
+            a highlighted row to a concrete case stays short.
           </p>
         </div>
       </article>
 
-      <article class="feature">
+      <article class="feature" id="density">
         <img
-          src="assets/git4.jpg"
-          alt="Density map comparing four production days with a heatmap of recurring defect zones and a field-count matrix. Line and cell IDs redacted."
+          src="assets/red4.png"
+          alt="Spatial density maps and a heatmap across several days. Identifiers redacted."
           width="1907"
           height="1014"
         />
-        <p class="caption">
-          Density map — line names and cell IDs redacted. Heatmap shows
-          recurring zones, not individual products.
-        </p>
         <div class="copy">
-          <h2>Spatial density and heatmaps</h2>
+          <h2>Spatial density</h2>
           <p>
-            Day-by-day maps make drift visible: a stable scatter versus a
-            repeating band. The heatmap aggregates several days so a one-off
-            lot does not look like a chronic tool mark.
-          </p>
-          <p>
-            The field grid is a compact crosstab (zone × day). That is the same
-            idea as a pivot in Excel or SQL, placed on the geometry of the
-            part — useful when the question is “is this a position problem or
-            a time problem?”
+            Side-by-side maps and a heatmap over several days. Recurring zones
+            stand out from one-off scatter. The grid is a compact crosstab
+            (zone × day) — the same idea as a pivot, drawn on geometry.
           </p>
         </div>
       </article>
 
-      <div class="pager">
-        <span></span>
-        <a href="analytics.html">
-          Next: root-cause analytics
-          <small>VCT · lami correlation · roll contamination</small>
-        </a>
-      </div>
+      <article class="feature" id="diagnostics">
+        <img
+          src="assets/red2.png"
+          alt="Diagnostic view with a calculation panel, cause bars and time-series charts. Identifiers redacted."
+          width="1907"
+          height="1016"
+        />
+        <div class="copy">
+          <h2>Diagnostics</h2>
+          <p>
+            When a result is a formula, the terms stay on screen: inputs,
+            output, limit. Bars and line charts sit beside the table so you can
+            see a step-change versus noise without exporting first.
+          </p>
+        </div>
+      </article>
+
+      <article class="feature" id="correlation">
+        <img
+          src="assets/red1.png"
+          alt="Timeline correlating flags, events and hourly volume. Identifiers redacted."
+          width="1912"
+          height="1018"
+        />
+        <div class="copy">
+          <h2>Event correlation</h2>
+          <p>
+            Flags, event dots and volume bars share a timeline. Duration
+            buckets turn a long log into a distribution: most of the loss in
+            many short events, or in a few long ones.
+          </p>
+        </div>
+      </article>
+
+      <article class="feature" id="cycles">
+        <img
+          src="assets/red5.png"
+          alt="Cycle analysis with a table, daily bars and spatial confirmation. Identifiers redacted."
+          width="1905"
+          height="1015"
+        />
+        <div class="copy">
+          <h2>Repeating cycles</h2>
+          <p>
+            Windows in time are grouped and typed, then checked on the map. If
+            a pattern returns, it is a candidate for a process cycle — not a
+            pile of independent rows.
+          </p>
+        </div>
+      </article>
     </main>
 
     <footer>
       <div class="wrap">
-        Portfolio case study. Not affiliated with any employer. This site
-        contains no confidential company data; screenshots are redacted.
-        Built for a data-analyst application.
+        Independent portfolio sample by Krystian Gańczarski.
+        This page contains no confidential data. Screenshots are redacted.
       </div>
     </footer>
   </body>
